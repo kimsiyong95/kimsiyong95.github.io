@@ -4,30 +4,26 @@ title: About
 permalink: /about/
 ---
 
-## Theme Monos
-> Simple and lightweight theme for Jekyll
+### About me
+> 안녕하세요! Back-end Developer 김시용의 개발 블로그입니다.
 
-### Features
-- Responsive.
-- Syntax Highlight
-- Most optimized theme for tech blog.
-- Lightweight with minimum stylesheet.
-- Easy to customize.
-- Offers category menu.
+> 고객(사용자)의 니즈를 고민하는 개발자<br>
+> 꼼꼼하게 빈 틈을 채워나가는 개발자<br>
+> 보다 더 나은 서비스를 만들어내는 개발자<br>
 
-### _config.yml
-> Code block will look like this.
+### myInfo
 ```yml
-highlighter-theme: monokai //you can change your syntax color scheme.
-date_format: "%Y-%M-%D" //and date format.
+birth : 1995.04.10
+mail: kimsiyong95@gmail.com
+phone: 010-****-2993
+addr : Daejeon Jungnidong
 ```
 
-### Screenshots
-#### Page
-![alt text](/public/img/screenshot-1.png)
-#### Articles
-![alt text](/public/img/screenshot-2.png)
-#### Page - Mobile
-![alt text](/public/img/screenshot-m1.png)
-#### Page - Articles
-![alt text](/public/img/screenshot-m2.png)
+<!-- ### Certificate  
+#### 정보처리기사
+![alt text](/public/img/certificate1.png)
+#### 모스마스터
+![alt text](/public/img/certificate2.png)
+#### 컴퓨터활용 2급
+![alt text](/public/img/certificate3.png)
+-->
