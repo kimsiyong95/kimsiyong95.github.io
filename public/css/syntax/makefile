@@ -29,5 +29,4 @@ STYLES += vs
 # re-expanded under the control of foreach
 #gen_html = pygmentize -S $(style) -f html -a .highlight > $(style).css;
 
-cssfiles:
-	@$(foreach style, $(STYLES), $(gen_html))
+#cssfiles: @$(foreach style, $(STYLES), $(gen_html))
