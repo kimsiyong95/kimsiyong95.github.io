@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "git commit convention"
-date:   2022-03-02 19:31:29 +0900
+date:   2022-03-03 19:31:29 +0900
 categories: Git
 ---
 
