@@ -40,7 +40,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-@Data
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -87,8 +87,7 @@ import java.sql.Timestamp;
 
 @AllArgsConstructor
 @Builder
-@Getter
-@Setter
+@Data
 public class EnterDTO {
     private String enterHisId;
     private String registId;
