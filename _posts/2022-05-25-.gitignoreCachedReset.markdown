@@ -1,0 +1,20 @@
+---
+layout: post
+title:  ".gitignore가 제대로 작동하지 않을때"
+date:   2022-05-25 23:14:29 +0900
+categories: Git
+---
+
+### 들어가며
+git push를 했을때 가끔 gitignore 설정이 제대로 안될때가 있다. <br>
+git cache 를 지우고 다시 commit push를 하면 제대로 작동을 한다.
+
+```
+git rm -r --cached .
+git add .
+git commit -m "Untracked files issue resolved to fix .gitignore"
+```
+
+### 마치며
+앞으로 더 성장하는 개발자가 되고싶다. <br>
+출저 : <a href="https://bytefreaks.net/programming-2/my-gitignore-file-is-ignored-by-git-and-it-does-not-work">https://bytefreaks.net/programming-2/my-gitignore-file-is-ignored-by-git-and-it-does-not-work</a>
