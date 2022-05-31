@@ -36,6 +36,28 @@ em.persist(member); // db에는 저장되지 않고  1차 캐시 (영속성) 안
                     // 실제 데이터를 저장하기 위해서 트랜잭션 커밋, flush 호출 시 쿼리 호출
 ```
 
+##### 준영속
+영속성 컨텍스트에 저장되었다가 분리된 상태
+```java
+Member member = new Member();
+member.setId("user1");
+member.setUsername("김시용");
+
+EntityManager em = entityManagerFactory.createEntityManager();
+em.detach(member); 
+```
+
+##### 삭제
+엔티티를 영속성 컨텍스트와 데이터베이스에서 삭제한다.
+
+```java
+Member member = new Member();
+member.setId("user1");
+member.setUsername("김시용");
+
+EntityManager em = entityManagerFactory.createEntityManager();
+em.remove(member);
+```
 
 
 
