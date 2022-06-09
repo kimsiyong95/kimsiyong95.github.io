@@ -11,7 +11,7 @@ JPA를 통해서 Entity Class에 @Table (name = "T_REGIST_M01")로 테이블을 
 이와 같은 문제가 일어났을때 해결방법을 소개해본다.
 
 ```
-@Data
+@Getter
 @Entity
 @Table(name = "T_REGIST_M01")
 public class RegistEntity {
