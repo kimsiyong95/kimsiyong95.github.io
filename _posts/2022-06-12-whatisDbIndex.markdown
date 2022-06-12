@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "데이터 베이스 인덱스가 B-Tree를 선택한 이유"
+title:  "데이터 베이스 인덱스를 B-Tree로 선택한 이유"
 date:   2022-06-12 20:17:00 +0900
 categories: Database
 ---
