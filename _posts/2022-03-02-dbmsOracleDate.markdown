@@ -2,7 +2,7 @@
 layout: post
 title: Oracle 날짜 관련 쿼리
 date: 2022-03-02 19:20:23 +0900
-category: DBMS
+category: Database
 ---
 # 참고 함수 및 포맷
 {% highlight ruby %}
