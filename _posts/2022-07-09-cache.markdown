@@ -48,7 +48,7 @@ public ResponseDTO getBrandLowestPrice(){
 위에서 데이터가 삭제, 수정 되었을 경우 위의 캐시를 삭제한다면 어떨까?? 바로 @CacheEvict(value="캐시아이디")를 사용해서<br>
 선언 했던 캐시를 지울수있다. allEntries는 사실 그 캐시안의 데이터를 전부 지우는 옵션이다. 이 옵션은 @Cacheable(value = "brandLowestPrice", key = "#id") <br>
 이런식으로 해당 Cache에 id를 따로 설정 할 수 있어 id 별로 따로 데이터를 넣거나 @CachePut(value = "brandLowestPrice", key = "#id")를 통해 데이터를 수정<br>
-할 수 있다. 그래서 allEntries true로 설정하게 되면 Cache안에 있는 모든 키의 데이터를 지우는 옵션이다.
+할 수 있다. 그래서 allEntries true로 설정하게 되면 Cache안에 있는 모든 키의 데이터를 지워 최신 데이터를 다시 Cache를 넣을 수 있게 된다.
 
 ```java
 @Transactional
