@@ -1,0 +1,78 @@
+---
+layout: post
+title:  "응답속도 개선하기 - Cache"
+date:   2022-07-09 20:17:00 +0900
+categories: SpringBoot
+---
+
+### 들어가며
+REST API를 개발하던 중 통계 데이터나 조회 하는 데이터의 경우 요청 수에 따라 DB에서 데이터를 가져온다. <br>
+똑같은 데이터를 조회하는데 굳이 DB에서 가져 올 필요가 있을까?? 이럴때 해결 할 수 있는 방법이 바로 Cache다. <br>
+고맙게도 SpringBoot에서 Chache 기능을 제공해준다. 하지만 이 기능은 어플리케이션의 메모리를 사용함으로 <br>
+캐시 저장소로 적합하지 않다. 보통 Redis를 이용하여 캐시 서버를 따로 두고 다른 어플리케이션들과 캐시를 공유한다.<br>
+하지만 이번 시간에는 기본 캐시 설정에 대해서 알아보자.
+
+### SpringBoot 설정
+
+##### 종속성 추가(gradle)
+```
+implementation 'org.springframework.boot:spring-boot-starter-cache'
+```
+
+##### @EnableCacheing 설정
+SpringBoot에서 Cache 기능을 사용하려면 @EnableCacheing 선언해야한다.
+```java
+@EnableCaching
+@SpringBootApplication
+public class ProductsServiceApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(ProductsServiceApplication.class, args);
+    }
+
+}
+```
+
+##### @Cacheable
+@Cacheable("캐시아이디") 를 선언함으로써 최초 접근 시 DB에서 데이터를 가져오고 그 이후에는 Cache에서 조회한다. <br>
+하지만 데이터가 수정되거나 삭제 되었을 시 Cache는 초기화 되지 않아 최신 데이터를 반영하지 않는다. 
+```java
+@Transactional(readOnly = true)
+@Cacheable("brandLowestPrice")
+public ResponseDTO getBrandLowestPrice(){
+    return new ResponseDTO().createResponseDTO(HttpStatus.OK, productsRepository.brandLowestPrice());
+}
+```
+
+##### @CacheEvict
+위에서 데이터가 삭제, 수정 되었을 경우 위의 캐시를 삭제한다면 어떨까?? 바로 @CacheEvict(value="캐시아이디")를 사용해서<br>
+선언 했던 캐시를 지울수있다. allEntries는 사실 그 캐시안의 데이터를 전부 지우는 옵션이다. 이 옵션은 @Cacheable(value = "brandLowestPrice", key = "#id") <br>
+이런식으로 해당 Cache에 id를 따로 설정 할 수 있어 id 별로 따로 데이터를 넣거나 @CachePut(value = "brandLowestPrice", key = "#id")를 통해 데이터를 수정<br>
+할 수 있다. 그래서 allEntries true로 설정하게 되면 Cache안에 있는 모든 키의 데이터를 지우는 옵션이다.
+
+```java
+@Transactional
+@CacheEvict("brandLowestPrice", allEntries = true)
+public ResponseDTO addProducts(ProductRequestDTO productRequestDTO){
+    ...
+    ...
+    ...
+}
+```
+
+### 마무리하며
+Cache를 사용함으로써 REST API의 응답속도도 개선이 가능하며, DB에 대한 요청수도 줄어들어 여러모로 장점이 많다.<br>
+장점도 있는 반면 단점도 있다. 아무래도 서버의 메모리를 사용 해야해서 모든 데이터를 캐시로 처리하면 메모리가 부족해 <br>
+서버에 문제가 생길 수 도 있다. 다음에는 Redis를 이용하여 캐시를 전역적으로 설정하고 따로 관리하는 방법에 대해 알아보자.
+
+
+
+
+
+
+
+
+
+
+
+
