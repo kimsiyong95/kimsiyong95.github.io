@@ -28,12 +28,8 @@ categories: Spring
 ##### DIRTY READ : 트랜잭션에서 처리한 작업(COMMIT/ROLLBACK)이 완료되지 않았음에도 불구하고,
 #####  다른 트랜잭션에서 볼 수 있게 되는 현상을 더티리드(Dirty Read)라고 합니다.
 
-<br>
-
 ##### NON-REPEATABLE READ : 하나의 트랜잭션 내에서 동일한 SELECT 쿼리를 실행했을 때,
 #####  항상 같은 결과를 보장해야 한다는 REPEATABLE READ 정합성에 어긋나는 것을 말한다.
-
-<br>
 
 ##### PHANTOM READ : SELECT ... FOR UPDATE 쿼리와 같은 쓰기 잠금을 거는 경우, 
 #####  다른 트랜잭션에서 수행한 변경 작업에 의해 레코드가 보였다가 안 보였다가 하는 현상을 말한다.
