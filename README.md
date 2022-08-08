@@ -16,7 +16,7 @@ permalink: /about/
 birth : 1995.04.10
 mail: kimsiyong95@gmail.com
 phone: 010-****-2993
-addr : Daejeon Jungnidong
+addr : Daejeon
 ```
 
 <!-- ### Certificate  
