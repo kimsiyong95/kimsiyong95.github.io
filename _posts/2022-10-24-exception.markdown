@@ -11,6 +11,12 @@ java는 크게 체크 예외와 언체크 예외 그리고 에러로 3가지로 
 
 <img src="/public/img/exception.png"  width="800" height="600"/><br>
 
+##### 에러란?
+개발자에 의해 만들어지는것이 아닌 시스템이 비정상적인 상황이 발생했을 경우입니다.<br>
+예를들면 OutofMemoryError나 StackOverflowError 같은 상황을 말합니다.
+
+##### 예외란?
+
 
 
 
