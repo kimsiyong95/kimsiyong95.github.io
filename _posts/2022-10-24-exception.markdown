@@ -16,6 +16,13 @@ java는 크게 체크 예외와 언체크 예외 그리고 에러로 3가지로 
 예를들면 OutofMemoryError나 StackOverflowError 같은 상황을 말합니다.
 
 ##### 예외란?
+예외는 코딩으로 인해 생기는 문제가 만들어진 상황입니다. 대표적으로 NullPointerException<br>
+이 있습니다. 그 외로 여러가지 예외가 있고 특히 예외는 2가지로 나눌수 있습니다<br>
+ - Checked Exception
+ - UnChecked Exception
+
+RuntimeException의 하위 클래스들이 UnChecked Exception 이고 Exception 클래스의<br>
+하위 클래스들을 Checked Exception 이라고 합니다.
 
 
 
